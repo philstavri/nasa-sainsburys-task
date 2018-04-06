@@ -3,7 +3,7 @@
     "@vue/app"
   ],
   "plugins": [
-    "transform-decorators-legacy",
-    "transform-class-properties"
+    "@babel/plugin-proposal-decorators",
+    ["@babel/plugin-proposal-class-properties", { "loose": true }]
   ]
 }

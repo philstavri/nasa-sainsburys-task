@@ -9,18 +9,19 @@
 
 <script>
 import Vue from 'vue'
-import Component from 'vue-class-component'
+import { Component, Prop } from 'vue-property-decorator'
 
-@Component({
-  props: {
-    size: String,
-    title: {
-      type: String,
-      required: true
-    }
-  }
-})
+@Component()
 export default class FloatingPage extends Vue {
+  @Prop(String)
+  size
+
+  @Prop({
+    type: String,
+    required: true
+  })
+  title
+
   get contentClasses () {
     let sizeModifier = this.size ? `floating-page__content--size-${this.size}` : ''
     return `floating-page__content ${sizeModifier}`
